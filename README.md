@@ -1,4 +1,4 @@
-# Namespaced Routes
+`# Namespaced Routes
 
 ## Objectives
 
@@ -16,7 +16,8 @@ We decide that we want to keep track of some basic blog statistics, such as how
 many posts and authors we have. We start by creating a `stats_controller.rb`
 with an `index` action and corresponding view.
 
-We can't actually browse to it yet because we need to set up a route. Let's add it to `routes.rb`:
+We can't actually browse to it yet because we need to set up a route. Let's add
+it to `routes.rb`:
 
 ```ruby
 # config/routes.rb
@@ -121,9 +122,9 @@ match. Let's create a new directory at `/app/views/admin/stats` and move our
 `stats/index.html.erb` into it, so we'll wind up with
 `/app/views/admin/stats/index.html.erb`.
 
-**Top-tip:** The `views` folder for a controller module (in this case `/admin`) expects a
-subfolder structure that matches the names of the controllers (in this case
-`/admin/stats`).
+**Top-tip:** The `views` folder for a controller module (in this case `/admin`)
+expects a subfolder structure that matches the names of the controllers (in this
+case `/admin/stats`).
 
 If we try to reload `/admin/stats` now, we will get an error because we need to
 tell our routes about our new module.
@@ -164,12 +165,13 @@ If we reload `/admin/stats`, everything still works, but we've simplified the
 declaration of the routes. The `namespace` method makes the assumption that the
 path prefix and module name match, saving us some typing.
 
-**Top-tip:** There is one important difference between `scope '/admin', module: 'admin'` and
-`namespace :admin`, and it's in the URL helpers. Remember above that using
-`scope` gave us a `stats_path` helper. But now that we are using `namespace`,
-run `rake routes` again. You'll see that the helper is now prefixed with
-`admin_`, so `stats_path` becomes `admin_stats_path`. If you switch from `scope`
-to `namespace`, take care to update any URL helpers you have in use!
+**Top-tip:** There is one important difference between
+`scope '/admin', module: 'admin'` and `namespace :admin`, and it's in the URL
+helpers. Remember above that using `scope` gave us a `stats_path` helper. But
+now that we are using `namespace`, run `rake routes` again. You'll see that the
+helper is now prefixed with `admin_`, so `stats_path` becomes
+`admin_stats_path`. If you switch from `scope` to `namespace`, take care to
+update any URL helpers you have in use!
 
 ## Summary
 
