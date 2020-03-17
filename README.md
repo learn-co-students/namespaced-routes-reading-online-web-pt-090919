@@ -14,7 +14,7 @@ to help us organize and group certain routes and controllers more logically.
 
 We decide that we want to keep track of some basic blog statistics, such as how
 many posts and authors we have. We start by creating a `stats_controller.rb`
-with an `index` action and corresponding view.
+with an `index` action and corresponding view. 
 
 We can't actually browse to it yet because we need to set up a route. Let's add it to `routes.rb`:
 
